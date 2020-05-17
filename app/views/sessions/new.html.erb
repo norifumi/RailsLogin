@@ -1,0 +1,9 @@
+<h1>Sign in</h1>
+<% if flash[:error] %>
+<p style="color: red"><b><%= flash[:error] %></b></p>
+<% end %>
+<%= form_with model: @user, url: :sessions, local: true do |f| %>
+  <%= f.label :email %><%= f.text_field :email %><br>
+  <%= f.label :password%><%= f.password_field :password %><br>
+  <%= f.submit 'sign in' %>
+<% end %>
